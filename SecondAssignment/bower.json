@@ -1,0 +1,24 @@
+{
+  "name": "Manoj",
+  "homepage": "https://github.com/manojadd/stackroute",
+  "description": "Second assignment",
+  "main": "index.html",
+  "keywords": [
+    "html"
+  ],
+  "authors": [
+    "Manoj"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
