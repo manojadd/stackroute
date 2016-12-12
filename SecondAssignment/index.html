@@ -16,10 +16,13 @@
 </head>
 
 <body>
+    <!-- creating a container for keeping all the content inside a container. So that the whole page is kept inside a container, eliminaton gnay horizontal scrollbar -->
     <div class="container">
+        <!-- making the navbar fixed using nax=vbar-fixed top and fluid for include edge to edge width -->
         <nav class="navbar navbar-default navbar-fixed-top container-fluid">
             <div class="container-fluid">
                 <div class="navbar-header ">
+                    <!-- each icon bar adds a line on the options button -->
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarlist">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -28,15 +31,14 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbarlist">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a href="#">Home</a>
-                        </li>
+                        <li class="active"><a href="#">Home</a></li>
                         <li><a href="#">Features</a></li>
                         <li><a href="#">Bikes</a></li>
                         <li><a href="#">Portfolio</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Shop</a></li>
                     </ul>
+                    <!-- the below div is for the search bar on the nav bar -->
                     <div class="col-sm-2  navbar-right">
                         <form action="" id="searchform" class="navbar-form navbar-right form-inline">
                             <div class="input-group ">
@@ -51,6 +53,7 @@
                             </div>
                         </form>
                     </div>
+
                 </div>
             </div>
         </nav>
@@ -71,6 +74,7 @@
                 </div>
             </div>
         </div>
+        <!-- carousel part below i don't think any explanations required. all h3 have google fonts including the h3 outside the div below. -->
         <div class="container" id="carouselcontainer">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -110,6 +114,7 @@
                 </a>
             </div>
         </div>
+        <!-- below part is a button for popping a modal window with a form to sign up. -->
         <div class="container">
             <div id="signupbox" class="jumbotron text-center ">
                 <button href="#" id="signupbutton" type="button" class="btn btn-block " data-toggle="modal" data-target="#formmodal">CLICK ME TO SIGN UP</button>
@@ -140,6 +145,7 @@
                 </div>
             </div>
         </div>
+        <!--below section is kind of the hero section since it covers the whole screen width -->
         <div class="jumbotron text-center">
             <h3>OUR FLEET IS VERY DIVERSE AND CUSTOM MADE FOR YOUR NEEDS</h3>
             <img src="images/bikeTypes.jpg" class="img-responsive center-block" alt="bikes we have">
@@ -154,6 +160,7 @@
                         <img src="images/everyonetab.jpg" id="everyone2" class="img-responsive center-block tab-pane fade tbimage" alt="">
                     </div>
                 </div>
+                <!-- in the below div, data-target is made to point to 2 ids, which are the paragraphs below and the img tags above. when user clicks on tabs, both the paragraph content and the image to the left(rendered) change. -->
                 <div class="col-md-6 row">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#admin" data-toggle="tab" data-target="#admin, #admin2">Admin</a></li>
@@ -192,6 +199,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- the below iframe is generated from google maps, google maps takes care of the rest. I have included the iframe in a div to position it properly in the page -->
                 <div class="col-md-4 footcol">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995095.4925219608!2d75.5362978758911!3d13.029827871707534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba548188646daf1%3A0x76e7feb5f52f9af7!2sHassan%2C+Karnataka!5e0!3m2!1sen!2sin!4v1481267640182" width="100%" height="200px" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
