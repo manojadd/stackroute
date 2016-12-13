@@ -15,7 +15,7 @@
 
 .tbimage {
   max-height: 400px;
-  height: 400px;
+  
   width: auto; }
 
 #searchform {
@@ -36,7 +36,7 @@
   font-family: "Kaushan Script", cursive;
   color: #e2e2e2;
   text-shadow: 3px 3px 4px orange;
-  font-size: 5vw; }
+  font-size: 3vw; }
 
 .footcol {
   border: none;
