@@ -107,6 +107,8 @@ add_country("Italy","SE");
 add_country("Spain","SE");
 add_country("Croatia","SE");
 add_country("Albania","SE");
+add_continent("Asia");
+add_country("Taiwan","Asia");
 
 
 
@@ -115,7 +117,3 @@ json_data_two =JSON.stringify(json_data_two,null,"\t\n\t");
 fs.writeFileSync('json_two',json_data_two);
 continents = JSON.stringify(continents,null,"\t\n\t");
 fs.writeFileSync('json_two_continents',continents);
-
-
-
-
