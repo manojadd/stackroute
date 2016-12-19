@@ -51,13 +51,15 @@ function add_continent(continent_name)
      {
 
      	continents[continent_name+"_list"] = [];
-     	json_data_two[continent_name] = {fat: 0,carb:0,prot:0};
+     	json_data_two[continent_name] = {fat: 0,carb:0,prot:0,count:0};
      	console.log(continent_name + " Added.\n");
      }
 }
 
 function add_country(country_name,continent_name)
 {
+	var count =0;
+	
 	if(!continents.hasOwnProperty(continent_name+"_list"))
 		console.log("Continent "+continent_name+" is not there in the continents list. Add it first. Adding "+country_name+" failed.\n");
 	else if(continents[continent_name+"_list"].includes(country_name))
@@ -66,23 +68,27 @@ function add_country(country_name,continent_name)
 	}
 	else
 	{
-		var json_fat = json_data_two[continent_name].fat;
-		var json_carb = json_data_two[continent_name].carb;
-		var json_prot = json_data_two[continent_name].prot;
+		var json_fat = json_data_two[continent_name].fat*json_data_two[continent_name].count;
+		var json_carb = json_data_two[continent_name].carb*json_data_two[continent_name].count;
+		var json_prot = json_data_two[continent_name].prot*json_data_two[continent_name].count;
 		continents[continent_name+"_list"].push(country_name);
 		
 		for(var i = 0;i<data_in.length;i++)
 		{
-			json_fat += (isNaN(parseFloat(data_in[i].fat_100g)) ? 0: parseFloat(data_in[i].fat_100g));
-			json_carb += (isNaN(parseFloat(data_in[i].carbohydrates_100g)) ? 0: parseFloat(data_in[i].carbohydrates_100g))
-			json_prot += (isNaN(parseFloat(data_in[i].proteins_100g)) ? 0: parseFloat(data_in[i].proteins_100g))
+			if(country_name == data_in[i].countries_en)
+			{
+			   json_data_two[continent_name].count++;
+				json_fat += (isNaN(parseFloat(data_in[i].fat_100g)) ? 0: parseFloat(data_in[i].fat_100g));
+				json_carb += (isNaN(parseFloat(data_in[i].carbohydrates_100g)) ? 0: parseFloat(data_in[i].carbohydrates_100g));
+				json_prot += (isNaN(parseFloat(data_in[i].proteins_100g)) ? 0: parseFloat(data_in[i].proteins_100g));
+			}
 		}
 		console.log(json_fat);
 		console.log(json_prot);
 		console.log(json_carb);
-		json_data_two[continent_name].fat = json_fat;
-		json_data_two[continent_name].carb = json_carb;
-		json_data_two[continent_name].prot = json_prot;
+		json_data_two[continent_name].fat = json_fat/json_data_two[continent_name].count;
+		json_data_two[continent_name].carb = json_carb/json_data_two[continent_name].count;
+		json_data_two[continent_name].prot = json_prot/json_data_two[continent_name].count;
 		console.log(country_name+" added to "+continent_name+"\n");
 	}
 
